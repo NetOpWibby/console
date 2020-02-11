@@ -3,7 +3,7 @@
     "name": "netop://ウエハ",
     "url": "https://webb.page"
   },
-  "description": "",
+  "description": "Print console messages in STYLE.",
   "devDependencies": {
     "@webb/config-prettier": "^2020.2.1-0.3",
     "chronver": "^2019.10.2-7.1",
@@ -44,5 +44,5 @@
     "test:assert": "ts-node test/index.ts"
   },
   "types": "dist/index.d.ts",
-  "version": "2020.02.11"
+  "version": "2020.02.11.1"
 }
