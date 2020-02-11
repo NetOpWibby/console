@@ -27,7 +27,7 @@ console.log(print.green(print.bold("This text is bold and green")));
 
 ## API
 
-### print[parameter](input);
+### print.[parameter]\(input);
 #### [parameter]
 
 Type: `enum`
