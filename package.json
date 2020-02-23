@@ -6,13 +6,14 @@
   "description": "Print console messages in STYLE.",
   "devDependencies": {
     "@webb/config-prettier": "^2020.2.1-0.3",
-    "chronver": "^2019.10.2-7.1",
+    "@webb/test": "^2020.2.12",
+    "chronver": "^2020.2.2-3.4",
     "del-cli": "^3.0.0",
-    "husky": "^4.2.1",
+    "husky": "^4.2.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "ts-node": "^8.6.2",
-    "typescript": "^3.7.5",
+    "typescript": "^3.8.2",
     "updates": "^9.3.3"
   },
   "homepage": "https://code.webb.page/Webb/console",
@@ -44,5 +45,5 @@
     "test:assert": "ts-node test/index.ts"
   },
   "types": "dist/index.d.ts",
-  "version": "2020.02.11.2"
+  "version": "2020.02.23"
 }

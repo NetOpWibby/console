@@ -5,6 +5,10 @@
 
 import assert from "assert";
 
+//  I M P O R T
+
+import Test from "@webb/test";
+
 //  U T I L
 
 import print from "../dist";
@@ -13,244 +17,109 @@ import print from "../dist";
 
 //  T E S T S
 
-try {
-  const message = "This text is magenta";
+const message = "This text is styled";
+const test = Test("@webb/console");
 
-  assert.strictEqual(`\u001b[35m${message}\u001b[0m`, print.magenta(message));
-  generateSuccessResponse(print.magenta(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Text is magenta", () => {
+  assert.deepStrictEqual(print.magenta(message), `\u001b[35m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This text is red";
+test("Text is red", () => {
+  assert.deepStrictEqual(print.red(message), `\u001b[31m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[31m${message}\u001b[0m`, print.red(message));
-  generateSuccessResponse(print.red(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Text is yellow", () => {
+  assert.deepStrictEqual(print.yellow(message), `\u001b[33m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This text is yellow";
+test("Text is green", () => {
+  assert.deepStrictEqual(print.green(message), `\u001b[32m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[33m${message}\u001b[0m`, print.yellow(message));
-  generateSuccessResponse(print.yellow(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Text is cyan", () => {
+  assert.deepStrictEqual(print.cyan(message), `\u001b[36m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This text is green";
+test("Text is blue", () => {
+  assert.deepStrictEqual(print.blue(message), `\u001b[34m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[32m${message}\u001b[0m`, print.green(message));
-  generateSuccessResponse(print.green(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Text is white", () => {
+  assert.deepStrictEqual(print.white(message), `\u001b[37m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This text is cyan";
+test("Text is gray", () => {
+  assert.deepStrictEqual(print.gray(message), `\u001b[90m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[36m${message}\u001b[0m`, print.cyan(message));
-  generateSuccessResponse(print.cyan(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Text is grey", () => {
+  assert.deepStrictEqual(print.grey(message), `\u001b[90m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This text is blue";
-
-  assert.strictEqual(`\u001b[34m${message}\u001b[0m`, print.blue(message));
-  generateSuccessResponse(print.blue(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This text is white";
-
-  assert.strictEqual(`\u001b[37m${message}\u001b[0m`, print.white(message));
-  generateSuccessResponse(print.white(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This text is gray";
-
-  assert.strictEqual(`\u001b[90m${message}\u001b[0m`, print.gray(message));
-  generateSuccessResponse(print.gray(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This text is grey";
-
-  assert.strictEqual(`\u001b[90m${message}\u001b[0m`, print.grey(message));
-  generateSuccessResponse(print.grey(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This text is black";
-
-  assert.strictEqual(`\u001b[30m${message}\u001b[0m`, print.black(message));
-  generateSuccessResponse(print.black(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Text is black", () => {
+  assert.deepStrictEqual(print.black(message), `\u001b[30m${message}\u001b[0m`);
+});
 
 //
 
-try {
-  const message = "This text is bold";
+test("Text is bold", () => {
+  assert.deepStrictEqual(print.bold(message), `\u001b[1m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[1m${message}\u001b[0m`, print.bold(message));
-  generateSuccessResponse(print.bold(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Text is dim", () => {
+  assert.deepStrictEqual(print.dim(message), `\u001b[2m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This text is dim";
+test("Text is inverted", () => {
+  assert.deepStrictEqual(print.invert(message), `\u001b[7m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[2m${message}\u001b[0m`, print.dim(message));
-  generateSuccessResponse(print.dim(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This text is inverted";
-
-  assert.strictEqual(`\u001b[7m${message}\u001b[0m`, print.invert(message));
-  generateSuccessResponse(print.invert(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This text is underlined";
-
-  assert.strictEqual(`\u001b[4m${message}\u001b[0m`, print.underline(message));
-  generateSuccessResponse(print.underline(message));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Text is underlined", () => {
+  assert.deepStrictEqual(print.underline(message), `\u001b[4m${message}\u001b[0m`);
+});
 
 //
 
-try {
-  const message = "This background is magenta";
+test("Background is magenta", () => {
+  assert.deepStrictEqual(print.magentaLine(message), `\u001b[45m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[45m${message}\u001b[0m`, print.magentaLine(message));
-  generateSuccessResponse(print.magentaLine(print.black(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Background is red", () => {
+  assert.deepStrictEqual(print.redLine(message), `\u001b[41m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This background is red";
+test("Background is yellow", () => {
+  assert.deepStrictEqual(print.yellowLine(message), `\u001b[43m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[41m${message}\u001b[0m`, print.redLine(message));
-  generateSuccessResponse(print.redLine(print.black(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Background is green", () => {
+  assert.deepStrictEqual(print.greenLine(message), `\u001b[42m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This background is yellow";
+test("Background is cyan", () => {
+  assert.deepStrictEqual(print.cyanLine(message), `\u001b[46m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[43m${message}\u001b[0m`, print.yellowLine(message));
-  generateSuccessResponse(print.yellowLine(print.black(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Background is blue", () => {
+  assert.deepStrictEqual(print.blueLine(message), `\u001b[44m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This background is green";
+test("Background is white", () => {
+  assert.deepStrictEqual(print.whiteLine(message), `\u001b[47m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[42m${message}\u001b[0m`, print.greenLine(message));
-  generateSuccessResponse(print.greenLine(print.black(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Background is gray", () => {
+  assert.deepStrictEqual(print.grayLine(message), `\u001b[100m${message}\u001b[0m`);
+});
 
-try {
-  const message = "This background is cyan";
+test("Background is grey", () => {
+  assert.deepStrictEqual(print.greyLine(message), `\u001b[100m${message}\u001b[0m`);
+});
 
-  assert.strictEqual(`\u001b[46m${message}\u001b[0m`, print.cyanLine(message));
-  generateSuccessResponse(print.cyanLine(print.black(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This background is blue";
-
-  assert.strictEqual(`\u001b[44m${message}\u001b[0m`, print.blueLine(message));
-  generateSuccessResponse(print.blueLine(print.black(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This background is white";
-
-  assert.strictEqual(`\u001b[47m${message}\u001b[0m`, print.whiteLine(message));
-  generateSuccessResponse(print.whiteLine(print.black(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This background is gray";
-
-  assert.strictEqual(`\u001b[100m${message}\u001b[0m`, print.grayLine(message));
-  generateSuccessResponse(print.grayLine(print.white(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This background is grey";
-
-  assert.strictEqual(`\u001b[100m${message}\u001b[0m`, print.greyLine(message));
-  generateSuccessResponse(print.greyLine(print.white(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
-
-try {
-  const message = "This background is black";
-
-  assert.strictEqual(`\u001b[40m${message}\u001b[0m`, print.blackLine(message));
-  generateSuccessResponse(print.blackLine(print.white(message)));
-} catch(testError) {
-  generateErrorResponse(testError);
-}
+test("Background is black", () => {
+  assert.deepStrictEqual(print.blackLine(message), `\u001b[40m${message}\u001b[0m`);
+});
 
 
 
-//  H E L P E R S
-
-function generateErrorResponse(theError: { actual: string, code: string, expected: string }) {
-  const { actual, code, expected } = theError;
-
-  console.group(print.red(print.bold(`${code}\n`)));
-  console.log(`ACTUAL\n${actual}`);
-  console.log();
-  console.log(`EXPECTED\n${expected}`);
-  console.log();
-  console.groupEnd();
-}
-
-function generateSuccessResponse(actualResponse: string) {
-  console.group(print.green(print.bold("ASSERTION PASSED\n")));
-  console.log(`ACTUAL/EXPECTED\n${actualResponse}`);
-  console.log();
-  console.groupEnd();
-}
+test.run();
