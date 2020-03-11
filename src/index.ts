@@ -7,7 +7,7 @@ interface LooseObject {
   [key: string]: any
 }
 
-const colors = {
+const colors: LooseObject = {
   black: 30,
   blue: 34,
   cyan: 36,
