@@ -1,13 +1,9 @@
 
 
 
-//  N A T I V E
-
-import assert from "assert";
-
 //  U T I L S
 
-import print from "../dist";
+import print from "./dist";
 
 
 
