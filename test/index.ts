@@ -11,6 +11,7 @@ import Test from "@webb/test";
 
 //  U T I L
 
+import { print as exportedPrint } from "../dist";
 import print from "../dist";
 
 
@@ -118,6 +119,108 @@ test("Background is grey", () => {
 
 test("Background is black", () => {
   assert.deepStrictEqual(print.blackLine(message), `\u001b[40m${message}\u001b[0m`);
+});
+
+////
+
+test("Using exported function, text is magenta", () => {
+  assert.deepStrictEqual(exportedPrint.magenta(message), `\u001b[35m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is red", () => {
+  assert.deepStrictEqual(exportedPrint.red(message), `\u001b[31m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is yellow", () => {
+  assert.deepStrictEqual(exportedPrint.yellow(message), `\u001b[33m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is green", () => {
+  assert.deepStrictEqual(exportedPrint.green(message), `\u001b[32m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is cyan", () => {
+  assert.deepStrictEqual(exportedPrint.cyan(message), `\u001b[36m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is blue", () => {
+  assert.deepStrictEqual(exportedPrint.blue(message), `\u001b[34m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is white", () => {
+  assert.deepStrictEqual(exportedPrint.white(message), `\u001b[37m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is gray", () => {
+  assert.deepStrictEqual(exportedPrint.gray(message), `\u001b[90m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is grey", () => {
+  assert.deepStrictEqual(exportedPrint.grey(message), `\u001b[90m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is black", () => {
+  assert.deepStrictEqual(exportedPrint.black(message), `\u001b[30m${message}\u001b[0m`);
+});
+
+//
+
+test("Using exported function, text is bold", () => {
+  assert.deepStrictEqual(exportedPrint.bold(message), `\u001b[1m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is dim", () => {
+  assert.deepStrictEqual(exportedPrint.dim(message), `\u001b[2m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is inverted", () => {
+  assert.deepStrictEqual(exportedPrint.invert(message), `\u001b[7m${message}\u001b[0m`);
+});
+
+test("Using exported function, text is underlined", () => {
+  assert.deepStrictEqual(exportedPrint.underline(message), `\u001b[4m${message}\u001b[0m`);
+});
+
+//
+
+test("Using exported function, background is magenta", () => {
+  assert.deepStrictEqual(exportedPrint.magentaLine(message), `\u001b[45m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is red", () => {
+  assert.deepStrictEqual(exportedPrint.redLine(message), `\u001b[41m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is yellow", () => {
+  assert.deepStrictEqual(exportedPrint.yellowLine(message), `\u001b[43m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is green", () => {
+  assert.deepStrictEqual(exportedPrint.greenLine(message), `\u001b[42m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is cyan", () => {
+  assert.deepStrictEqual(exportedPrint.cyanLine(message), `\u001b[46m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is blue", () => {
+  assert.deepStrictEqual(exportedPrint.blueLine(message), `\u001b[44m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is white", () => {
+  assert.deepStrictEqual(exportedPrint.whiteLine(message), `\u001b[47m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is gray", () => {
+  assert.deepStrictEqual(exportedPrint.grayLine(message), `\u001b[100m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is grey", () => {
+  assert.deepStrictEqual(exportedPrint.greyLine(message), `\u001b[100m${message}\u001b[0m`);
+});
+
+test("Using exported function, background is black", () => {
+  assert.deepStrictEqual(exportedPrint.blackLine(message), `\u001b[40m${message}\u001b[0m`);
 });
 
 

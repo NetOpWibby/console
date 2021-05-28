@@ -15,7 +15,18 @@ $ npm i @webb/console
 ## Usage
 
 ```js
+// Import the default export
 import print from "@webb/console";
+
+console.log(print.cyan("This text is cyan"));
+
+// You can also nest styles!
+console.log(print.green(print.bold("This text is bold and green")));
+```
+
+```js
+// Or, export the named function
+import { print } from "@webb/console";
 
 console.log(print.cyan("This text is cyan"));
 
@@ -75,3 +86,9 @@ $ npm run test:assert
 # Not really a test, just shows a 20x9 rainbow-esque banner
 $ npm run showcase
 ```
+
+
+
+## Support
+
+I don't drink coffee so if you like this module and want to support me, feel free to send some HNS to `hs1q98ddwl2lcpnnzfvvrqad80qu97w0q72cyq2uy3`!

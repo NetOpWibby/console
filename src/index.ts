@@ -1,7 +1,7 @@
 
 
 
-//  U T I L S
+//  U T I L
 
 interface LooseObject {
   [key: string]: any
@@ -67,4 +67,5 @@ function createExport(colorCode: number, message: string) {
 
 //  E X P O R T
 
+export const print = consoleExport;
 export default consoleExport;
